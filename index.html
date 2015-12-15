@@ -25,9 +25,9 @@
 							 background-color:  rgba(248,248,255,0.3);">
 
 				<label for="email">Email Address</label>
-				<input id="email" type="email" id="email" name="email" placeholder="jon@doe.com">
+				<input id="email" type="email" id="email" name="email" placeholder="jon@doe.com" onkeypress="changeListener()">
 				<label for="password">Password</label>
-				<input type="password" id="password" name="password" placeholder="password">
+				<input type="password" id="password" name="password" placeholder="password" onkeypress="changeListener()">
 				<br>
 				<a id="sect6" class="cbp-fbcurrent">
 					<input id="login" class="cbp-mc-submit cbp-button" type="button" value="Log In" />
@@ -131,7 +131,9 @@
 			$('#sect4b').click();
 		}
 	});
-	$('#email').blur(function(){
+
+
+	function changeListener() {
 		var mail = document.getElementById('email').value;
 		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 		var password = document.getElementById('password').value;
@@ -147,27 +149,7 @@
 		{
 			$('#sect2b').click();
 		}
-
-	});
-	$('#password').blur(function(){
-		var mail = document.getElementById('email').value;
-		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-		var password = document.getElementById('password').value;
-		if(password.length > 5 && mail.match(mailformat)){
-			$('#sect5b').click();
-		}
-		else if(mail.match(mailformat))
-		{
-			$('#sect3b').click();
-		}
-
-		else
-		{
-			$('#sect2b').click();
-		}
-
-	});
-
+	}
 </script>
 
 
