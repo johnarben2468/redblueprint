@@ -1,0 +1,233 @@
+/* Set all parents to full height */
+html, body, 
+.container,
+.cbp-fbscroller,
+.cbp-fbscroller section { 
+	height: 100%; 
+}
+
+/* The nav is fixed on the right side  and we center it by translating it 50% 
+(we don't know it's height so we can't use the negative margin trick) */
+.cbp-fbscroller > nav {
+	position: fixed;
+	z-index: 9999;
+	right: 100px;
+	top: 20%;
+	width: 26px;
+	-webkit-transform: translateY(-20%);
+	-moz-transform: translateY(-20%);
+	-ms-transform: translateY(-20%);
+	transform: translateY(-20%);
+}
+
+.cbp-fbscroller > nav a {
+	display: block;
+	position: relative;
+	z-index: 9999;
+	color: transparent;
+	width: 26px;
+	height: 26px;
+	outline: none;
+	margin: 25px 0;
+	border-radius: 50%;
+	border: 4px solid #fff;
+}
+
+.no-touch .cbp-fbscroller > nav a:hover {
+	background: rgba(255,255,255,0.6);
+}
+
+.cbp-fbscroller > nav a.cbp-fbcurrent {
+	background: #fff;
+}
+
+/* background-attachment does the trick */
+.cbp-fbscroller section {
+	position: relative;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.no-touch .cbp-fbscroller section {
+	background-attachment: fixed;
+}
+
+#fbsection1 {
+	background-image: url(../images/1.png);
+}
+
+#fbsection2 {
+	background-image: url(../images/2.png);
+}
+
+#fbsection3 {
+	background-image: url(../images/3.png);
+}
+
+#fbsection4 {
+	background-image: url(../images/4.png);
+}
+
+#fbsection5 {
+	background-image: url(../images/5.png);
+}
+
+#fbsection6 {
+	background-image: url(../images/6.png);
+}
+
+#fbsection7 {
+	background-image: url(../images/7.png);
+}
+
+.cbp-mc-form {
+	position: relative;
+}
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.cbp-mc-form:before,
+.cbp-mc-form:after {
+	content: " "; display: table;
+}
+
+.cbp-mc-form:after {
+	clear: both;
+}
+
+.cbp-mc-column {
+	width: 33%;
+	padding: 10px 30px;
+	float: left;
+}
+
+.cbp-mc-form label {
+	display: block;
+	padding: 40px 5px 5px 2px;
+	font-size: 1.1em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+
+.cbp-mc-form input,
+.cbp-mc-form textarea,
+.cbp-mc-form select {
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+	line-height: 1.5;
+	font-size: 1.4em;
+	padding: 5px 10px;
+	color: #fff;
+	display: block;
+	width: 100%;
+	background: transparent;
+}
+
+.cbp-mc-form input,
+.cbp-mc-form textarea {
+	border: 3px solid #fff;
+}
+
+.cbp-mc-form textarea {
+	min-height: 200px;
+}
+
+.cbp-mc-form input:focus,
+.cbp-mc-form textarea:focus,
+.cbp-mc-form label:active + input,
+.cbp-mc-form label:active + textarea {
+	outline: none;
+	border: 3px solid #e32636;
+}
+
+.cbp-mc-form select:focus {
+	outline: none;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+	color: #e32636;
+	font-style: italic;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color: #e32636;
+	font-style: italic;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color: #e32636;
+	font-style: italic;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+	color: #e32636;
+	font-style: italic;
+}
+
+.cbp-mc-submit-wrap {
+	text-align: center;
+	padding-top: 40px;
+	clear: both;
+}
+
+.cbp-mc-form input.cbp-mc-submit {
+	background: #e32636;
+	border: none;
+	color: #fff;
+	width: auto;
+	cursor: pointer;
+	text-transform: uppercase;
+	padding: 15px 30px;
+	font-size: 1.1em;
+	border-radius: 2px;
+	letter-spacing: 1px;
+}
+
+.cbp-mc-form input.cbp-mc-submit:hover {
+	background: #e32636;
+}
+
+.cbp-text {
+	font-size: 1.1em;
+	border-radius: 2px;
+	letter-spacing: 1px;
+	margin-top: 20%;
+
+	margin-left: 30%;
+
+	margin-right: 30%;
+}
+.cbp-button {
+	background: #e32636;
+	border: none;
+	color: #fff;
+	width: auto;
+	cursor: pointer;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 15px 30px;
+	font-size: 1.1em;
+	border-radius: 2px;
+	letter-spacing: 1px;
+	align: center;
+	margin-bottom: 20%;
+	margin-left: 40%;
+	margin-right: 40%;
+}
+
+
+@media screen and (max-width: 70em) {
+	.cbp-mc-column {
+		width: 50%;
+	}
+	.cbp-mc-column:nth-child(3) {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 48em) {
+	.cbp-mc-column {
+		width: 100%;
+		padding: 10px;
+	}
+}
