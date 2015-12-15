@@ -1,177 +1,177 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>Blueprint: Fixed Background Scrolling Layout</title>
-		<meta name="description" content="Blueprint: Fixed Background Scrolling Layout" />
-		<meta name="keywords" content="background scrolling, fixed background, background-attachment, jquery" />
-		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" href="../favicon.ico">
-		<link rel="stylesheet" type="text/css" href="css/default.css" />
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<script src="js/modernizr.custom.js"></script>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blueprint: Fixed Background Scrolling Layout</title>
+	<meta name="description" content="Blueprint: Fixed Background Scrolling Layout" />
+	<meta name="keywords" content="background scrolling, fixed background, background-attachment, jquery" />
+	<meta name="author" content="Codrops" />
+	<link rel="shortcut icon" href="../favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/default.css" />
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<script src="js/modernizr.custom.js"></script>
 
-	</head>
-	<body>
-		<div class="container">
-			<header class="clearfix" >
-				<span>Sample</span>
-				<h1>Sample Layout</h1>
+</head>
+<body>
+<div class="container">
+	<header class="clearfix" >
+		<span>Sample</span>
+		<h1>Sample Layout</h1>
 
-				<form class="cbp-mc-form" align="right">
-					<div class="cbp-mc-column" style="margin-left: 80%;
+		<form class="cbp-mc-form" align="right">
+			<div class="cbp-mc-column" style="margin-left: 80%;
 							 background-color:  rgba(248,248,255,0.3);">
 
-						<label for="email">Email Address</label>
-						<input id="email" type="email" id="email" name="email" placeholder="jon@doe.com">
-						<label for="password">Password</label>
-						<input type="password" id="password" name="password" placeholder="password">
-						<br>
-						<a id="sect6" class="cbp-fbcurrent">
-							<input id="login" class="cbp-mc-submit cbp-button" type="button" value="Log In" />
-						</a>
-					</div>
-				</form>
-			</header>	
-			<div id="cbp-fbscroller" class="cbp-fbscroller">
-				<nav style="display: none">
-					<a href="#fbsection1" class="cbp-fbcurrent">Section 1</a>
-					<a id="sect2b" href="#fbsection2">Section 2</a>
-					<a id="sect3b" href="#fbsection3">Section 3</a>
-					<a id="sect4b" href="#fbsection4">Section 4</a>
-					<a id="sect5b" href="#fbsection5">Section 5</a>
-					<a id="sect6b" href="#fbsection6">Section 6</a>
-					<a id="sect7b" href="#fbsection7">Section 7</a>
-				</nav>
-
-				<section  id="fbsection1">
-
-				</section>
-				<section id="fbsection2">
-
-
-				</section>
-				<section id="fbsection3">
-
-
-				</section>
-				<section id="fbsection4">
-
-
-				</section>
-				<section id="fbsection5">
-
-				</section>
-				<section id="fbsection6">
-
-				</section>
-				<section id="fbsection7">
-
-				</section>
+				<label for="email">Email Address</label>
+				<input id="email" type="email" id="email" name="email" placeholder="jon@doe.com">
+				<label for="password">Password</label>
+				<input type="password" id="password" name="password" placeholder="password">
+				<br>
+				<a id="sect6" class="cbp-fbcurrent">
+					<input id="login" class="cbp-mc-submit cbp-button" type="button" value="Log In" />
+				</a>
 			</div>
-		</div>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<!-- jquery.easing by http://gsgd.co.uk/ : http://gsgd.co.uk/sandbox/jquery/easing/ -->
-		<script src="js/jquery.easing.min.js"></script>
-		<!-- waypoints jQuery plugin by http://imakewebthings.com/ : http://imakewebthings.com/jquery-waypoints/ -->
-		<script src="js/waypoints.min.js"></script>
-		<!-- jquery-smartresize by @louis_remi : https://github.com/louisremi/jquery-smartresize -->
-		<script src="js/jquery.debouncedresize.js"></script>
-		<script src="js/cbpFixedScrollLayout.min.js"></script>
+		</form>
+	</header>
+	<div id="cbp-fbscroller" class="cbp-fbscroller">
+		<nav style="display: none">
+			<a href="#fbsection1" class="cbp-fbcurrent">Section 1</a>
+			<a id="sect2b" href="#fbsection2">Section 2</a>
+			<a id="sect3b" href="#fbsection3">Section 3</a>
+			<a id="sect4b" href="#fbsection4">Section 4</a>
+			<a id="sect5b" href="#fbsection5">Section 5</a>
+			<a id="sect6b" href="#fbsection6">Section 6</a>
+			<a id="sect7b" href="#fbsection7">Section 7</a>
+		</nav>
 
-		<script>
+		<section  id="fbsection1">
 
-			$(function() {
-				cbpFixedScrollLayout.init();
-			});
-		</script>
-
-		<script type="text/javascript">
-
+		</section>
+		<section id="fbsection2">
 
 
-
-			$('#login').click(function() {
-				$('#sect6b').click();
-			});
+		</section>
+		<section id="fbsection3">
 
 
-			$('#email').focus(function() {
-				var mail = document.getElementById('email').value;
-				var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-				var password = document.getElementById('password').value;
-				if(password.length > 5 && mail.match(mailformat)){
-					$('#sect5b').click();
-				}
-				else if(mail.match(mailformat))
-				{
-					$('#sect3b').click();
-				}
+		</section>
+		<section id="fbsection4">
 
-				else
-				{
-					$('#sect2b').click();
-				}
-			});
-			$('#password').focus(function() {
-				var mail = document.getElementById('email').value;
-				var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-				var password = document.getElementById('password').value;
-				if(password.length > 5 && mail.match(mailformat)){
-					$('#sect5b').click();
-				}
-				else if(mail.match(mailformat))
-				{
-					$('#sect3b').click();
-				}
-				else
-				{
-					$('#sect4b').click();
-				}
-			});
-			$('#email').blur(function(){
-				var mail = document.getElementById('email').value;
-				var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-				var password = document.getElementById('password').value;
-				if(password.length > 5 && mail.match(mailformat)){
-					$('#sect5b').click();
-				}
-				else if(mail.match(mailformat))
-				{
-					$('#sect3b').click();
-				}
 
-				else
-				{
-					$('#sect2b').click();
-				}
+		</section>
+		<section id="fbsection5">
 
-			});
-			$('#password').blur(function(){
-				var mail = document.getElementById('email').value;
-				var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-				var password = document.getElementById('password').value;
-				if(password.length > 5 && mail.match(mailformat)){
-					$('#sect5b').click();
-				}
-				else if(mail.match(mailformat))
-				{
-					$('#sect3b').click();
-				}
+		</section>
+		<section id="fbsection6">
 
-				else
-				{
-					$('#sect2b').click();
-				}
+		</section>
+		<section id="fbsection7">
 
-			});
+		</section>
+	</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!-- jquery.easing by http://gsgd.co.uk/ : http://gsgd.co.uk/sandbox/jquery/easing/ -->
+<script src="js/jquery.easing.min.js"></script>
+<!-- waypoints jQuery plugin by http://imakewebthings.com/ : http://imakewebthings.com/jquery-waypoints/ -->
+<script src="js/waypoints.min.js"></script>
+<!-- jquery-smartresize by @louis_remi : https://github.com/louisremi/jquery-smartresize -->
+<script src="js/jquery.debouncedresize.js"></script>
+<script src="js/cbpFixedScrollLayout.min.js"></script>
 
-		</script>
+<script>
+
+	$(function() {
+		cbpFixedScrollLayout.init();
+	});
+</script>
+
+<script type="text/javascript">
 
 
 
 
-	</body>
+	$('#login').click(function() {
+		$('#sect6b').click();
+	});
+
+
+	$('#email').focus(function() {
+		var mail = document.getElementById('email').value;
+		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		var password = document.getElementById('password').value;
+		if(password.length > 5 && mail.match(mailformat)){
+			$('#sect5b').click();
+		}
+		else if(mail.match(mailformat))
+		{
+			$('#sect3b').click();
+		}
+
+		else
+		{
+			$('#sect2b').click();
+		}
+	});
+	$('#password').focus(function() {
+		var mail = document.getElementById('email').value;
+		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		var password = document.getElementById('password').value;
+		if(password.length > 5 && mail.match(mailformat)){
+			$('#sect5b').click();
+		}
+		else if(mail.match(mailformat))
+		{
+			$('#sect3b').click();
+		}
+		else
+		{
+			$('#sect4b').click();
+		}
+	});
+	$('#email').blur(function(){
+		var mail = document.getElementById('email').value;
+		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		var password = document.getElementById('password').value;
+		if(password.length > 5 && mail.match(mailformat)){
+			$('#sect5b').click();
+		}
+		else if(mail.match(mailformat))
+		{
+			$('#sect3b').click();
+		}
+
+		else
+		{
+			$('#sect2b').click();
+		}
+
+	});
+	$('#password').blur(function(){
+		var mail = document.getElementById('email').value;
+		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		var password = document.getElementById('password').value;
+		if(password.length > 5 && mail.match(mailformat)){
+			$('#sect5b').click();
+		}
+		else if(mail.match(mailformat))
+		{
+			$('#sect3b').click();
+		}
+
+		else
+		{
+			$('#sect2b').click();
+		}
+
+	});
+
+</script>
+
+
+
+
+</body>
 </html>
