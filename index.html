@@ -26,19 +26,15 @@
 		<h1>Sample Layout</h1>
 
 		<form class="cbp-mc-form" >
-			<div class="cbp-mc-column" style="margin-left: 80%;
-							 background-color:  rgba(248,248,255,0.3);">
-
+			<div class="cbp-mc-column" style="margin-left: 80%; background-color:  rgba(248,248,255,0.3);">
 				<label for="email">Email Address</label>
 				<input id="email" type="email" id="email" name="email" placeholder="jon@doe.com" onkeypress="changeListener()">
 				<label for="password">Password</label>
 				<input type="password" id="password" name="password" placeholder="password" onkeypress="changeListener()">
 				<br>
-
 				<a id="sect6" class="cbp-fbcurrent">
 					<input id="login" class="cbp-mc-submit cbp-button"  type="button" value="Log In" />
 				</a>
-
 			</div>
 		</form>
 	</header>
@@ -63,11 +59,7 @@
 <script src="js/jquery.debouncedresize.js"></script>
 <script src="js/cbpFixedScrollLayout.min.js"></script>
 <script src="js/jquery-1.11.3.js"></script>
-<script>
-	$(function() {
-		cbpFixedScrollLayout.init();
-	});
-</script>
+
 
 <script type="text/javascript">
 
@@ -78,7 +70,7 @@
 		var password = document.getElementById('password').value;
 		if(password.length > 5 && mail.match(mailformat)){
 
-			$('#p1').fadeIn('slow');
+			$('#p6').fadeIn('slow');
 		}
 
 	});
@@ -91,18 +83,18 @@
 		var password = document.getElementById('password').value;
 
 		if(password.length > 5 && mail.match(complete)){
-			$('#p6').fadeIn('slow');
+			$('#p5').fadeIn('slow');
 		}
 		else  if(mail.match(complete)){
 			$('#p4').fadeIn('slow');
 		}
 		else if(mail.match(mailformat))
 		{
-			$('#p3').fadeIn('slow');
+			$('#p2').fadeIn('slow');
 		}
 		else
 		{
-			$('#p2').fadeIn('slow');
+			$('#p1').fadeIn('slow');
 		}
 	});
 
@@ -113,20 +105,20 @@
 		var password = document.getElementById('password').value;
 
 		if(password.length > 5 && mail.match(complete)){
-			$('#p6').fadeIn('slow');
+			$('#p5').fadeIn('slow');
 		}
 		else  if(mail.match(complete)){
+			$('#p3').fadeIn('slow');
 			$('#p4').fadeIn('slow');
-			$('#p5').fadeIn('slow');
 		}
 		else if(mail.match(mailformat))
 		{
-			$('#p3').fadeIn('slow');
+			$('#p2').fadeIn('slow');
 		}
 		else
 		{
 
-				$('#p2').fadeIn('slow');
+				$('#p1').fadeIn('slow');
 
 		}
 	});
@@ -138,18 +130,18 @@
 		var password = document.getElementById('password').value;
 
 		if(password.length > 5 && mail.match(complete)){
-			$('#p6').fadeIn('slow');
+			$('#p5').fadeIn('slow');
 		}
 		else  if(mail.match(complete)){
-			$('#p4').fadeIn('slow');
+			$('#p3').fadeIn('slow');
 		}
 		else if(mail.match(mailformat))
 		{
-			$('#p3').fadeIn('slow');
+			$('#p2').fadeIn('slow');
 		}
 		else
 		{
-			$('#p2').fadeIn('slow');
+			$('#p1').fadeIn('slow');
 		}
 	}
 
