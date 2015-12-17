@@ -90,12 +90,15 @@
 </script>
 
 <script type="text/javascript">
-
-
-
-
 	$('#login').click(function() {
-		$('#sect6b').click();
+
+		var mail = document.getElementById('email').value;
+		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		var password = document.getElementById('password').value;
+		if(password.length > 5 && mail.match(mailformat)){
+			$('#sect6b').click();
+		}
+
 	});
 
 
@@ -129,10 +132,9 @@
 		}
 		else
 		{
-			$('#sect4b').click();
+			$('#sect2b').click();
 		}
 	});
-
 
 	function changeListener() {
 		var mail = document.getElementById('email').value;
@@ -148,7 +150,7 @@
 
 		else
 		{
-			$('#sect2b').click();
+			$('#sect1b').click();
 		}
 	}
 </script>
