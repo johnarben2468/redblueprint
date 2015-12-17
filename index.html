@@ -11,15 +11,21 @@
 	<link rel="stylesheet" type="text/css" href="css/component.css" />
 	<script src="js/modernizr.custom.js"></script>
 
+
 </head>
 <body style="
-    overflow:hidden;">
+  background: gray; /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(circle, gray, gray, darkgray); /* Safari */
+  background: -o-radial-gradient(circle, gray, darkgray, darkgray); /* Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(circle, gray, darkgray, darkgray); /* Firefox 3.6 to 15 */
+  background: radial-gradient(circle, whitesmoke, darkgray, darkgray); /* Standard syntax */
+">
 <div class="container">
 	<header class="clearfix" >
 		<span>Sample</span>
 		<h1>Sample Layout</h1>
 
-		<form class="cbp-mc-form" align="right">
+		<form class="cbp-mc-form" >
 			<div class="cbp-mc-column" style="margin-left: 80%;
 							 background-color:  rgba(248,248,255,0.3);">
 
@@ -28,30 +34,24 @@
 				<label for="password">Password</label>
 				<input type="password" id="password" name="password" placeholder="password" onkeypress="changeListener()">
 				<br>
+
 				<a id="sect6" class="cbp-fbcurrent">
-					<input id="login" class="cbp-mc-submit cbp-button" type="button" value="Log In" />
+					<input id="login" class="cbp-mc-submit cbp-button"  type="button" value="Log In" />
 				</a>
+
 			</div>
 		</form>
 	</header>
-	<div id="cbp-fbscroller" class="cbp-fbscroller">
-		<nav style="display: none">
-			<a href="#fbsection1" class="cbp-fbcurrent">Section 1</a>
-			<a id="sect2b" href="#fbsection2">Section 2</a>
-			<a id="sect3b" href="#fbsection3">Section 3</a>
-			<a id="sect4b" href="#fbsection4">Section 4</a>
-			<a id="sect5b" href="#fbsection5">Section 5</a>
-			<a id="sect6b" href="#fbsection6">Section 6</a>
-			<a id="sect7b" href="#fbsection7">Section 7</a>
-		</nav>
+	<div style="position: relative; top: 25%;
+	left: 35%;">
 
-		<section id="fbsection1"></section>
-		<section id="fbsection2"></section>
-		<section id="fbsection3"></section>
-		<section id="fbsection4"></section>
-		<section id="fbsection5"></section>
-		<section id="fbsection6"></section>
-		<section id="fbsection7"></section>
+		<img id="p1" class="central hidden" src="images/1P.png" />
+		<img id="p2" class="central hidden" src="images/2P.png" />
+		<img id="p3" class="central hidden" src="images/3P.png" />
+		<img id="p4" class="central hidden" src="images/4P.png" />
+		<img id="p5" class="central hidden" src="images/5P.png" />
+		<img id="p6" class="central hidden" src="images/6P.png" />
+
 	</div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -62,7 +62,7 @@
 <!-- jquery-smartresize by @louis_remi : https://github.com/louisremi/jquery-smartresize -->
 <script src="js/jquery.debouncedresize.js"></script>
 <script src="js/cbpFixedScrollLayout.min.js"></script>
-
+<script src="js/jquery-1.11.3.js"></script>
 <script>
 	$(function() {
 		cbpFixedScrollLayout.init();
@@ -77,7 +77,8 @@
 		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 		var password = document.getElementById('password').value;
 		if(password.length > 5 && mail.match(mailformat)){
-			$('#sect6b').click();
+
+			$('#p1').fadeIn('slow');
 		}
 
 	});
@@ -85,55 +86,75 @@
 
 	$('#email').focus(function() {
 		var mail = document.getElementById('email').value;
-		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)+$/;
+		var complete = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 		var password = document.getElementById('password').value;
-		if(password.length > 5 && mail.match(mailformat)){
-			$('#sect5b').click();
+
+		if(password.length > 5 && mail.match(complete)){
+			$('#p6').fadeIn('slow');
+		}
+		else  if(mail.match(complete)){
+			$('#p4').fadeIn('slow');
 		}
 		else if(mail.match(mailformat))
 		{
-			$('#sect3b').click();
+			$('#p3').fadeIn('slow');
 		}
-
 		else
 		{
-			$('#sect2b').click();
+			$('#p2').fadeIn('slow');
 		}
 	});
+
 	$('#password').focus(function() {
 		var mail = document.getElementById('email').value;
-		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)+$/;
+		var complete = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 		var password = document.getElementById('password').value;
-		if(password.length > 5 && mail.match(mailformat)){
-			$('#sect5b').click();
+
+		if(password.length > 5 && mail.match(complete)){
+			$('#p6').fadeIn('slow');
+		}
+		else  if(mail.match(complete)){
+			$('#p4').fadeIn('slow');
+			$('#p5').fadeIn('slow');
 		}
 		else if(mail.match(mailformat))
 		{
-			$('#sect4b').click();
+			$('#p3').fadeIn('slow');
 		}
 		else
 		{
-			$('#sect2b').click();
+
+				$('#p2').fadeIn('slow');
+
 		}
 	});
 
 	function changeListener() {
 		var mail = document.getElementById('email').value;
-		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		var mailformat = /^\w+([\.-]?\w+)*@/;
+		var complete = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 		var password = document.getElementById('password').value;
-		if(password.length > 5 && mail.match(mailformat)){
-			$('#sect5b').click();
+
+		if(password.length > 5 && mail.match(complete)){
+			$('#p6').fadeIn('slow');
+		}
+		else  if(mail.match(complete)){
+			$('#p4').fadeIn('slow');
 		}
 		else if(mail.match(mailformat))
 		{
-			$('#sect3b').click();
+			$('#p3').fadeIn('slow');
 		}
-
 		else
 		{
-			$('#sect1b').click();
+			$('#p2').fadeIn('slow');
 		}
 	}
+
+
+
 </script>
 
 
