@@ -15,10 +15,10 @@
 </head>
 <body style="
   background: gray; /* For browsers that do not support gradients */
-  background: -webkit-radial-gradient(circle, gray, gray, darkgray); /* Safari */
-  background: -o-radial-gradient(circle, gray, darkgray, darkgray); /* Opera 11.6 to 12.0 */
-  background: -moz-radial-gradient(circle, gray, darkgray, darkgray); /* Firefox 3.6 to 15 */
-  background: radial-gradient(circle, whitesmoke, darkgray, darkgray); /* Standard syntax */
+  background: -webkit-radial-gradient(circle, darkgray, darkgray, darkgray); /* Safari */
+  background: -o-radial-gradient(circle, darkgray, darkgray, darkgray); /* Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(circle, darkgray, darkgray, darkgray); /* Firefox 3.6 to 15 */
+  background: radial-gradient(circle, darkgray, darkgray, darkgray); /* Standard syntax */
 ">
 <div class="container">
 	<header class="clearfix" >
@@ -38,17 +38,34 @@
 			</div>
 		</form>
 	</header>
+
+
 	<div style="position: relative; top: 25%;
 	left: 35%;">
 
-		<img id="p1" class="central hidden shadowed" src="images/1P.png" />
-		<img id="p2" class="central hidden shadowed" src="images/2P.png" />
-		<img id="p3" class="central hidden shadowed" src="images/3P.png" />
-		<img id="p4" class="central hidden shadowed" src="images/4P.png" />
-		<img id="p5" class="central hidden shadowed" src="images/5P.png" />
-		<img id="p6" class="central hidden shadowed" src="images/6P.png" />
+		<img class="central" style="z-index: 1;" src="images/0.png" width="400" height="400"/>
+		<img id="p1" style="z-index: 3;" class="central hidden " src="images/1P.png" />
+		<img id="p2" style="z-index: 3;" class="central hidden " src="images/2P.png" />
+		<img id="p3" style="z-index: 3;" class="central hidden " src="images/3P.png" />
+		<img id="p4" style="z-index: 3;" class="central hidden " src="images/4P.png" />
+		<img id="p5" style="z-index: 3;" class="central hidden " src="images/5P.png" />
+		<img id="p6" style="z-index: 3;" class="central hidden " src="images/6P.png" />
 
 	</div>
+	<img src="images/light.png" style="
+	position: relative;
+	top: 25%;
+	left: 23%;
+	width: 800px; height: 800px;
+	z-index: 1;"
+
+	/>
+	<img style="
+	position: relative;
+	left:-13%;
+	top: 100%;
+	width: 495px; height: 122px;
+	z-index: 1;" src="images/shadow.png" />
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <!-- jquery.easing by http://gsgd.co.uk/ : http://gsgd.co.uk/sandbox/jquery/easing/ -->
@@ -69,7 +86,6 @@
 		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 		var password = document.getElementById('password').value;
 		if(password.length > 5 && mail.match(mailformat)){
-
 			$('#p6').fadeIn('slow');
 		}
 
@@ -117,8 +133,7 @@
 		}
 		else
 		{
-
-				$('#p1').fadeIn('slow');
+			$('#p1').fadeIn('slow');
 
 		}
 	});
