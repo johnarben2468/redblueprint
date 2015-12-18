@@ -14,7 +14,11 @@
 
 </head>
 <body style="
-  background: gray; /* For browsers that do not support gradients */
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+  background: darkgray; /* For browsers that do not support gradients */
   background: -webkit-radial-gradient(circle, darkgray, darkgray, darkgray); /* Safari */
   background: -o-radial-gradient(circle, darkgray, darkgray, darkgray); /* Opera 11.6 to 12.0 */
   background: -moz-radial-gradient(circle, darkgray, darkgray, darkgray); /* Firefox 3.6 to 15 */
@@ -58,7 +62,6 @@
 	left: 23%;
 	width: 800px; height: 800px;
 	z-index: 1;"
-
 	/>
 	<img style="
 	position: relative;
@@ -66,7 +69,15 @@
 	top: 100%;
 	width: 495px; height: 122px;
 	z-index: 1;" src="images/shadow.png" />
+	<img style="
+	position: relative;
+	left: 10%;
+	top: 100%;
+	z-index: 1;" src="images/ffuf.png"
+		 width="100" height="123"/>
+
 </div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <!-- jquery.easing by http://gsgd.co.uk/ : http://gsgd.co.uk/sandbox/jquery/easing/ -->
 <script src="js/jquery.easing.min.js"></script>
